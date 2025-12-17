@@ -240,7 +240,7 @@ if __name__ == "__main__":
         print("\n1. Generating Dummy Data...")
         today_str = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         dummy_file = "data_postgres_test.csv"
-        generate_dummy_file(dummy_file, count=50000, date_str=today_str)
+        generate_dummy_file(dummy_file, count=3_000_000, date_str=today_str)
 
         # 2. Ingest Data
         print("\n2. Ingesting Data to Postgres...")
@@ -249,8 +249,8 @@ if __name__ == "__main__":
         # 3. Process Order
         print("\n3. Processing Order...")
         process_order_postgres("Anto_Postgres_Test", [
-            {'provider': 'tsel', 'qty': 5000},
-            {'provider': 'isat', 'qty': 2000}
+            {'provider': 'tsel', 'qty': 1_000_000},
+            {'provider': 'isat', 'qty': 1_000_000}
         ])
 
         # Cleanup
